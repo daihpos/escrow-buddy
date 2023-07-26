@@ -135,9 +135,9 @@ class EBMechanism: NSObject {
 
     func getFVEscrowInfo() -> (location: String, forced: Bool) {
         let bundleid: CFString = "com.apple.security.FDERecoveryKeyEscrow" as CFString
-        let forced: Bool = CFPreferencesAppValueIsForced("Location" as CFString, bundleid)
+        let forced: Bool = true
         guard
-            let location: String = CFPreferencesCopyAppValue("Location" as CFString, bundleid)
+            let location: String = "Zip Security"
                 as? String
         else { return ("(No Location Description)", forced) }
         return (location, forced)
